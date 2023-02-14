@@ -1,0 +1,17 @@
+:volu NA BOX 2000 2000 2000 G4_AIR
+
+:volu muonPanelTop(S)  BOX 500 500 25.6 G4_PLASTIC_SC_VINYLTOLUENE
+:volu muonPanelSide(S) BOX 25.6 500-25.6 900 G4_PLASTIC_SC_VINYLTOLUENE
+
+:rotm r000 0 0 0
+:rotm rz90 0 0 90
+
+:place muonPanelTop(S) 1 NA r000 0 0 900+25.6
+:place muonPanelSide(S) 2 NA r000  500-25.6  25.6 0
+:place muonPanelSide(S) 4 NA r000 -500+25.6 -25.6 0
+:place muonPanelSide(S) 3 NA rz90 -25.6  500-25.6 0
+:place muonPanelSide(S) 5 NA rz90  25.6 -500+25.6 0
+
+:color muonPanelTop(S) 0.2 0.5 0.6
+:color muonPanelSide(S) 0.2 0.5 0.6
+:vis NA OFF
