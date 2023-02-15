@@ -105,7 +105,34 @@
 
 	hm4side.SetLineColor(kRed);
 	hm4st.SetLineColor(kGreen);
+	hm4side.SetStats(0);
 	hm4side.Draw();
 	hm4st.Draw("same");
-	tm4side.Draw("et[3]/1000","","same");
+
+	TLegend le(0.7,0.7,0.95, 0.9);
+	le.SetHeader("#mu^{-}, 4 GeV");
+	le.AddEntry(&hm4side, "Side panel", "l");
+	le.AddEntry(&hm4st, "Top panel", "l");
+	le.Draw();
+
+	TCanvas c4; c4.SetLogy();
+	TChain tm4G45("t");
+	tm4G45.Add("mu-4GeV45deg.root");
+	TH1F hm4G45("hm4G45",";Energy deposition of "
+			"45^{#circ} muons in panels [MeV];",100,0,50);
+	TH1F hm45st("hm45st","",100,0,50);
+	tm4G45.Draw("et[5]/1000>>hm4G45");
+	tm4G45.Draw("et[1]/1000>>hm45st");
+
+	hm4G45.SetLineColor(kRed);
+	hm45st.SetLineColor(kGreen);
+	hm4G45.SetStats(0);
+	hm4G45.Draw();
+	hm45st.Draw("same");
+
+	TLegend lege(0.7,0.7,0.95, 0.9);
+	lege.SetHeader("#mu^{-}, 4 GeV");
+	lege.AddEntry(&hm4G45, "Side panel", "l");
+	lege.AddEntry(&hm45st, "Top panel", "l");
+	lege.Draw();
 }
