@@ -90,8 +90,22 @@
 	legend.Draw();
 
 	TCanvas c2; c2.SetLogy();
-	gStyle->SetOptStat(110010);
 	TH1F hs20full("hs20full",";Energy deposition of vertically "
 			"down-going muons in side panel [MeV];",72,0,720);
 	tp20GeV.Draw("et[2]/1000>>hs20full");
+
+	TCanvas c3; c3.SetLogy();
+	TChain tm4side("t");
+	tm4side.Add("mu-4GeVside.root");
+	TH1F hm4side("hm4side",";Energy deposition of "
+			"horizontal muons in panels [MeV];",60,0,30);
+	TH1F hm4st("hm4st","",60,0,30);
+	tm4side.Draw("et[5]/1000>>hm4side");
+	tm4side.Draw("et[1]/1000>>hm4st");
+
+	hm4side.SetLineColor(kRed);
+	hm4st.SetLineColor(kGreen);
+	hm4side.Draw();
+	hm4st.Draw("same");
+	tm4side.Draw("et[3]/1000","","same");
 }
