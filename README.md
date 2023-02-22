@@ -5,6 +5,9 @@
 - [gamma.mac](gamma.mac): Geant4 macro for gamma-ray simulation
 - [rootlogon.C](rootlogon.C): configuration of [ROOT][] plots
 - [docker-compose.yml](docker-compose.yml): docker-compose service definitions
+- [drawEinMuonPanels.C](drawEinMuonPanels.C): draw energy distributions of cosmic-ray muons in scintillation panels
+- [drawVinMuonPanels.C](drawVinMuonPanels.C): draw voltage distributions of cosmic-ray muons in scintillation panels
+- [drawGammaSurvivability.C](drawGammaSurvivability.C): demonstrate attenuation of 2.6 MeV gamma-rays in lead bricks
 
 ## Get started
 
