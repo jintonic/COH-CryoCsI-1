@@ -5,8 +5,8 @@
 :volu TopPanel(S)  BOX 500 500 25.6/2 G4_PLASTIC_SC_VINYLTOLUENE
 :volu SidePanel(S) BOX 25.6/2 500-25.6/2 800 G4_PLASTIC_SC_VINYLTOLUENE
 
-:volu LeadBricks BOX 500-25.6/2 500-25.6/2 800 G4_Pb
-:volu Air BOX 480-25.6/2 480-25.6/2 780 G4_AIR
+:volu LeadBricks BOX 500-25.6 500-25.6 800 G4_Pb
+:volu Air BOX 480-25.6 480-25.6 640 G4_AIR
 
 // no rotate at all
 :rotm r000 0 0 0
