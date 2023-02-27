@@ -32,6 +32,7 @@
 /run/verbose 2
 /analysis/setFileName n1MeV.root
 /run/printProgress 1000
+/run/beamOn 10000
 
 /gps/energy 400 MeV
 /analysis/setFileName n400MeV.root
