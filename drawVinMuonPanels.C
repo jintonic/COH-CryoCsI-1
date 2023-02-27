@@ -20,7 +20,7 @@
 
     TChain tg("t");
     tg.Add("g2614.root");
-    tg.Draw("et[1]>>hEg"); // total energy deposition in top panel [keV]
+    tg.Draw("et[21]>>hEg"); // total energy deposition in top panel [keV]
     int ng=tg.GetSelectedRows();
     cout<<ng<<" gamma events in total"<<endl;
     double *eg=tg.GetV1();
@@ -35,7 +35,7 @@
 
     TChain tm("t");
     tm.Add("mu+4GeV.root");
-    tm.Draw("et[1]>>hEm"); // total energy deposition in top panel [keV]
+    tm.Draw("et[21]>>hEm"); // total energy deposition in top panel [keV]
     int nm=tm.GetSelectedRows();
     cout<<nm<<" muon events in total"<<endl;
     double *em=tm.GetV1();

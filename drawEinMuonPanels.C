@@ -3,42 +3,42 @@
 	tm100M.Add("mu-100MeV.root");
 	TH1F hm100M("hm100M",";Energy deposition of vertically "
 			"down-going muons in top panel [MeV];",60,0,30);
-	tm100M.Draw("et[1]/1000>>hm100M");
+	tm100M.Draw("et[21]/1000>>hm100M");
 
 	TChain tm1GeV("t");
 	tm1GeV.Add("mu-1GeV.root");
 	TH1F hm1GeV("hm1GeV","",60,0,30);
-	tm1GeV.Draw("et[1]/1000>>hm1GeV");
+	tm1GeV.Draw("et[21]/1000>>hm1GeV");
 
 	TChain tm4GeV("t");
 	tm4GeV.Add("mu-4GeV.root");
 	TH1F hm4GeV("hm4GeV","",60,0,30);
-	tm4GeV.Draw("et[1]/1000>>hm4GeV");
+	tm4GeV.Draw("et[21]/1000>>hm4GeV");
 
 	TChain tm20GeV("t");
 	tm20GeV.Add("mu-20GeV.root");
 	TH1F hm20GeV("hm20GeV","",60,0,30);
-	tm20GeV.Draw("et[1]/1000>>hm20GeV");
+	tm20GeV.Draw("et[21]/1000>>hm20GeV");
 
 	TChain tp100M("t");
 	tp100M.Add("mu+100MeV.root");
 	TH1F hp100M("hp100M","",60,0,30);
-	tp100M.Draw("et[1]/1000>>hp100M");
+	tp100M.Draw("et[21]/1000>>hp100M");
 
 	TChain tp1GeV("t");
 	tp1GeV.Add("mu+1GeV.root");
 	TH1F hp1GeV("hp1GeV","",60,0,30);
-	tp1GeV.Draw("et[1]/1000>>hp1GeV");
+	tp1GeV.Draw("et[21]/1000>>hp1GeV");
 
 	TChain tp4GeV("t");
 	tp4GeV.Add("mu+4GeV.root");
 	TH1F hp4GeV("hp4GeV","",60,0,30);
-	tp4GeV.Draw("et[1]/1000>>hp4GeV");
+	tp4GeV.Draw("et[21]/1000>>hp4GeV");
 
 	TChain tp20GeV("t");
 	tp20GeV.Add("mu+20GeV.root");
 	TH1F hp20GeV("hp20GeV","",60,0,30);
-	tp20GeV.Draw("et[1]/1000>>hp20GeV");
+	tp20GeV.Draw("et[21]/1000>>hp20GeV");
 
 	hm100M.SetStats(0);
 
@@ -79,7 +79,7 @@
 	TCanvas can; can.SetLogy();
 	TH1F hs20GeV("hs20GeV",";Energy deposition of vertically "
 			"down-going muons in panels [MeV];",60,0,30);
-	tp20GeV.Draw("et[2]/1000>>hs20GeV");
+	tp20GeV.Draw("et[22]/1000>>hs20GeV");
 	hs20GeV.SetStats(0);
 	hp20GeV.Draw("same");
 
@@ -92,7 +92,7 @@
 	TCanvas c2; c2.SetLogy();
 	TH1F hs20full("hs20full",";Energy deposition of vertically "
 			"down-going muons in side panel [MeV];",72,0,720);
-	tp20GeV.Draw("et[2]/1000>>hs20full");
+	tp20GeV.Draw("et[22]/1000>>hs20full");
 
 	TCanvas c3; c3.SetLogy();
 	TChain tm4side("t");
@@ -100,8 +100,8 @@
 	TH1F hm4side("hm4side",";Energy deposition of "
 			"horizontal muons in panels [MeV];",60,0,30);
 	TH1F hm4st("hm4st","",60,0,30);
-	tm4side.Draw("et[5]/1000>>hm4side");
-	tm4side.Draw("et[1]/1000>>hm4st");
+	tm4side.Draw("et[25]/1000>>hm4side");
+	tm4side.Draw("et[21]/1000>>hm4st");
 
 	hm4side.SetLineColor(kRed);
 	hm4st.SetLineColor(kGreen);
@@ -121,8 +121,8 @@
 	TH1F hm4G45("hm4G45",";Energy deposition of "
 			"45^{#circ} muons in panels [MeV];",100,0,50);
 	TH1F hm45st("hm45st","",100,0,50);
-	tm4G45.Draw("et[5]/1000>>hm4G45");
-	tm4G45.Draw("et[1]/1000>>hm45st");
+	tm4G45.Draw("et[25]/1000>>hm4G45");
+	tm4G45.Draw("et[21]/1000>>hm45st");
 
 	hm4G45.SetLineColor(kRed);
 	hm45st.SetLineColor(kGreen);
