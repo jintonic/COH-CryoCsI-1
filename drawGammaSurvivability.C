@@ -19,7 +19,7 @@
 	g.SetTitle("Survivability of 2.614 MeV #gamma in Pb" // graph title
 		 ";Pb thickness [cm];(# of penetrated)/(# of generated) [%]"); // x,y titles
 
-	TF1 f("f","expo",0,20); // function expo: Constant*e^{Slope*x}
+	TF1 f("f","expo",0,20); // function expo: e^{Constant+Slope*x}
 	g.Fit("f"); // fit function, f, to graph, g
 
 	// https://en.wikipedia.org/wiki/Attenuation_length
