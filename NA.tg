@@ -1,0 +1,25 @@
+// default unit of length: mm
+// keep the size of Neutrino Alley (NA) similar to that of a detector
+:volu concrete BOX 10*m 10*m 20*m G4_CONCRETE
+:volu NA BOX 2.5*m 2.5*m 15*m G4_AIR
+:volu detector BOX 2.5*m 2.5*m 1 G4_AIR
+
+// no rotate at all
+:rotm r000 0 0 0
+// rotate around y axis by 90 degree
+:rotm ry90 0 90 0
+
+:place NA 10 concrete r000 0 0 0
+:place detector 1 NA r000 0 0  6*m
+:place detector 2 NA r000 0 0  4*m
+:place detector 3 NA r000 0 0  2*m
+:place detector 4 NA r000 0 0  0*m
+:place detector 5 NA r000 0 0 -2*m
+:place detector 6 NA r000 0 0 -4*m
+:place detector 7 NA r000 0 0 -6*m
+:place detector 8 NA r000 0 0 -8*m
+:place detector 9 NA ry90 -2.498*m 0 -12.5*m
+
+:color concrete 0.2 0.5 0.6
+:color NA 0.2 0.5 0.6
+:color detector 0.8 0.8 0.8
