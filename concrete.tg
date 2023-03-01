@@ -1,0 +1,12 @@
+:volu world BOX 5*m 5*m 5*m G4_Galactic
+:volu concrete BOX 5*m 5*m 0.5*m G4_CONCRETE
+:volu detector BOX 5*m 5*m 1 G4_Galactic
+
+:rotm r000 0 0 0
+
+:place concrete 10 world r000 0 0 2*m
+:place detector 1 world r000 0 0 3*m
+
+:color concrete 0.2 0.5 0.6
+:color detector 0.8 0.8 0.8
+:vis world OFF
