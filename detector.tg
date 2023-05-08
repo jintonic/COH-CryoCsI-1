@@ -1,0 +1,42 @@
+// parameters (default unit for length: mm)
+// Rc: radius of CsI crystal
+// Hc: height of CsI crystal
+// Dc: depth of cut
+// Tr: thickness of reflectors
+// Tw: thickness of Teflon wrap
+// Tp: thickness of PCB
+// Wp: width of PCB
+// Ts: thickness of SiPM
+:p inch 25.4
+:p Rc 3*$inch
+:p Hc 2*$Rc
+:p Dc $inch/2
+:p Tr 0.1
+:p Tw 2
+:p Tp 0.062*$inch
+:p Wp sqrt(2*$Rc*$Dc-$Dc*$Dc)-2
+:p Ts 0.032*$inch
+
+// crystal geometry = base - cut
+:rotm r000 0 0 0
+:solid base TUBE 0 $Rc $Hc/2
+:solid cut BOX $Rc $Dc $Hc/2+$Tr
+:solid crystal SUBTRACTION base cut r000 0 $Rc 0
+
+:volu CsI(S) crystal G4_CESIUM_IODIDE
+:volu wrap TUBE 0 $Rc+$Tw $Hc/2+$Tw G4_TEFLON
+:volu reflector TUBE 0 $Rc $Tr/2 G4_Al
+:volu PCB BOX $Wp $Tp/2 $Hc/2 G4_POLYETHYLENE
+:volu SiPM BOX $Wp $Ts/2 $Hc/2 G4_Si
+
+:place CsI(S) 1 wrap r000 0 0 0
+:place reflector -1 wrap r000 0 0  $Rc+$Tr/2
+:place reflector -2 wrap r000 0 0 -$Rc-$Tr/2
+:place SiPM -3 wrap r000 0 $Rc-$Dc+$Ts/2 0
+:place PCB -4 wrap r000 0 $Rc-$Dc+$Ts+$Tp/2 0
+
+:color SiPM 0.5 0.8 1
+:color PCB 0.5 0.7 0.4
+:color CsI(S) 0.5 1 0.8
+:color wrap 0.9 0.9 0.9
+:color reflector 0.7 0.7 0.8

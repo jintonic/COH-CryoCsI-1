@@ -1,0 +1,19 @@
+/control/verbose 2
+/geometry/source detector.tg
+
+/physics_lists/select QGSP_BERT_EMZ
+/physics_lists/factory/addOptical
+
+/run/initialize
+
+/vis/ASCIITree/verbose 13
+/vis/drawTree
+/geometry/test/run
+
+/process/list Optical
+
+/vis/open HepRepFile
+/vis/drawVolume
+/vis/scene/add/axes
+/vis/viewer/flush
+
