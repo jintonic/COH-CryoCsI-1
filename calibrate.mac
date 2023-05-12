@@ -1,0 +1,13 @@
+# calibrate the detector from outside of the PTR
+/control/verbose 2
+/geometry/source PTR.tg
+
+/run/initialize
+
+/vis/ASCIITree/verbose 13
+/vis/drawTree
+/geometry/test/run
+
+/vis/open HepRepFile
+/vis/drawVolume
+/vis/viewer/refresh
