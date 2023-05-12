@@ -17,11 +17,11 @@
 :p Wp sqrt(2*$Rc*$Dc-$Dc*$Dc)-2
 :p Ts 0.032*$inch
 
-// crystal geometry = base - cut
+// crystal geometry = a - b
 :rotm r000 0 0 0
-:solid base TUBE 0 $Rc $Hc/2
-:solid cut BOX $Rc $Dc $Hc/2+$Tr
-:solid crystal SUBTRACTION base cut r000 0 $Rc 0
+:solid a TUBE 0 $Rc $Hc/2
+:solid b BOX $Rc $Dc $Hc/2+$Tr
+:solid crystal SUBTRACTION a b r000 0 $Rc 0
 
 :volu CsI(S) crystal G4_CESIUM_IODIDE
 :volu wrap TUBE 0 $Rc+$Tw $Hc/2+$Tw G4_TEFLON
